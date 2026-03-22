@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About · Chores</title>
+<meta name="description" content="The story behind Chores — built by Johnny Spicer at 14, going door to door. Now a platform connecting neighbors for real, paid local work.">
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +36,7 @@ nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.07);}
 .page{padding-top:72px;min-height:100vh;}
 .fade-up{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
 .fade-up.in{opacity:1;transform:translateY(0);}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}svg{vertical-align:middle;}
 footer{background:var(--text);padding:40px 72px;}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 .footer-logo{font-family:"Playfair Display",serif;font-size:20px;font-weight:800;color:#fff;}
@@ -43,6 +44,22 @@ footer{background:var(--text);padding:40px 72px;}
 .footer-links a{color:rgba(255,255,255,.45);text-decoration:none;font-size:13px;transition:color .2s;}
 .footer-links a:hover{color:#fff;}
 .footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+
+/* ── Mobile nav ── */
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:all .3s;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .nav-burger{display:flex;}
+  .nav-links{display:none;flex-direction:column;align-items:stretch;position:fixed;top:72px;left:0;right:0;background:rgba(248,244,239,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 16px 20px;gap:4px;z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links a{font-size:16px;padding:12px 16px;border-radius:12px;}
+  footer{padding:32px 20px;}
+  .footer-inner{flex-direction:column;gap:20px;text-align:center;}
+  .footer-links{justify-content:center;flex-wrap:wrap;gap:14px;}
+  .section-title{letter-spacing:-.5px;}
+  .eyebrow{margin-bottom:14px;}
+}
 </style>
 <style>
 .about-hero{padding:100px 100px 80px;background:var(--cream);border-bottom:1px solid var(--border);}
@@ -61,7 +78,7 @@ footer{background:var(--text);padding:40px 72px;}
 .mission-inner{max-width:1200px;margin:0 auto;}
 .mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px;}
 .mission-card{background:var(--cream);border-radius:24px;padding:36px 32px;border:1px solid var(--border);}
-.mission-icon{font-size:32px;margin-bottom:16px;}
+.mission-icon{font-size:32px;margin-bottom:16px;color:var(--gm);}
 .mission-title{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:var(--green);margin-bottom:10px;}
 .mission-body{font-size:14px;color:var(--muted);line-height:1.7;}
 /* values */
@@ -72,6 +89,16 @@ footer{background:var(--text);padding:40px 72px;}
 .value-card{background:rgba(255,255,255,.07);border-radius:20px;padding:28px;border:1px solid rgba(255,255,255,.1);}
 .value-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;}
 .value-body{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7;}
+
+@media(max-width:768px){
+  .about-hero{padding:52px 24px 44px;}
+  .about-photo-float{float:none!important;width:100%;max-width:260px;margin:0 auto 24px!important;display:block;}
+  .mission{padding:60px 24px;}
+  .mission-grid{grid-template-columns:1fr;}
+  .values{padding:60px 24px;}
+  .values-grid{grid-template-columns:1fr;}
+  .about-cta{padding:60px 24px!important;}
+}
 </style>
 </head>
 <body>
@@ -87,6 +114,7 @@ footer{background:var(--text);padding:40px 72px;}
     <li><a href="features.html" >Features</a></li>
     <li><a href="about.html" class='active'>About</a></li>
     <li><a href="download.html" class="nav-cta ">Get the App</a></li>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </ul>
 </nav>
 <div class="page">
@@ -160,7 +188,7 @@ footer{background:var(--text);padding:40px 72px;}
   </div>
 
   <!-- CTA -->
-  <div style="padding:80px 100px;background:var(--cream);text-align:center;">
+  <div class="about-cta" style="padding:80px 100px;background:var(--cream);text-align:center;">
     <div style="max-width:600px;margin:0 auto;">
       <h2 class="section-title">Join the community.</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:36px;">Whether you need help or want to earn — Chores is free to join and takes less than two minutes to get started.</p>
@@ -188,5 +216,7 @@ footer{background:var(--text);padding:40px 72px;}
 <script>
 window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>20);});
 document.querySelectorAll(".fade-up").forEach(el=>{new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in");});},{threshold:.12}).observe(el);});
+
+document.getElementById('nav-burger').addEventListener('click',()=>{document.querySelector('#nav .nav-links').classList.toggle('open');});
 </script>
 </body></html>

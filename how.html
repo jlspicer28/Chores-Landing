@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>How It Works · Chores</title>
+<meta name="description" content="Learn how Chores works in 4 simple steps — post a job, review applicants, fund escrow, and get paid. Simple and safe for everyone.">
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +36,7 @@ nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.07);}
 .page{padding-top:72px;min-height:100vh;}
 .fade-up{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease;}
 .fade-up.in{opacity:1;transform:translateY(0);}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}svg{vertical-align:middle;}
 footer{background:var(--text);padding:40px 72px;}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 .footer-logo{font-family:"Playfair Display",serif;font-size:20px;font-weight:800;color:#fff;}
@@ -43,6 +44,22 @@ footer{background:var(--text);padding:40px 72px;}
 .footer-links a{color:rgba(255,255,255,.45);text-decoration:none;font-size:13px;transition:color .2s;}
 .footer-links a:hover{color:#fff;}
 .footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+
+/* ── Mobile nav ── */
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:all .3s;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .nav-burger{display:flex;}
+  .nav-links{display:none;flex-direction:column;align-items:stretch;position:fixed;top:72px;left:0;right:0;background:rgba(248,244,239,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 16px 20px;gap:4px;z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links a{font-size:16px;padding:12px 16px;border-radius:12px;}
+  footer{padding:32px 20px;}
+  .footer-inner{flex-direction:column;gap:20px;text-align:center;}
+  .footer-links{justify-content:center;flex-wrap:wrap;gap:14px;}
+  .section-title{letter-spacing:-.5px;}
+  .eyebrow{margin-bottom:14px;}
+}
 </style>
 <style>
 .how-hero{padding:100px 100px 60px;background:var(--white);border-bottom:1px solid var(--border);}
@@ -91,6 +108,20 @@ footer{background:var(--text);padding:40px 72px;}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
 .faq-a-inner{padding:0 0 20px;font-size:15px;color:var(--muted);line-height:1.8;}
 .faq-item.open .faq-a{max-height:200px;}
+
+@media(max-width:768px){
+  .how-hero{padding:52px 24px 40px;}
+  .how-hero-inner{grid-template-columns:1fr;gap:32px;}
+  .steps-section{padding:60px 24px;}
+  .step-row{grid-template-columns:52px 1fr;gap:16px 20px;}
+  .step-num-big{font-size:52px;}
+  .step-visual{grid-column:1/-1;}
+  .pw-outer{padding:60px 24px!important;}
+  .pw-grid{grid-template-columns:1fr!important;}
+  .pw-card{padding:36px 28px;}
+  .faq-section{padding:60px 24px;}
+  .faq-inner{max-width:100%;}
+}
 </style>
 </head>
 <body>
@@ -106,6 +137,7 @@ footer{background:var(--text);padding:40px 72px;}
     <li><a href="features.html" >Features</a></li>
     <li><a href="about.html" >About</a></li>
     <li><a href="download.html" class="nav-cta ">Get the App</a></li>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </ul>
 </nav>
 <div class="page">
@@ -220,13 +252,13 @@ footer{background:var(--text);padding:40px 72px;}
   </div>
 
   <!-- POSTER / WORKER SPLIT -->
-  <div style="padding:80px 100px;background:var(--white);">
+  <div class="pw-outer" style="padding:80px 100px;background:var(--white);">
     <div style="max-width:1200px;margin:0 auto;">
       <div class="fade-up" style="margin-bottom:52px;">
         <div class="eyebrow">Two Sides, One Platform</div>
         <h2 class="section-title">Built for both of you.</h2>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div class="pw-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
         <div class="pw-card pw-poster fade-up">
           <div class="pw-tag">For Posters</div>
           <h3 class="pw-title">Need something taken care of?</h3>
@@ -301,5 +333,7 @@ document.querySelectorAll(".faq-q").forEach(q=>{
     if(!wasOpen) item.classList.add("open");
   });
 });
+
+document.getElementById('nav-burger').addEventListener('click',()=>{document.querySelector('#nav .nav-links').classList.toggle('open');});
 </script>
 </body></html>
