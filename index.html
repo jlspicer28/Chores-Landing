@@ -62,8 +62,8 @@ footer{background:var(--text);padding:40px 72px;}
 }
 </style>
 <style>
-#home{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1fr 480px;}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 80px 80px 100px;}
+#home{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1fr 1fr;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 72px 80px 100px;max-width:680px;}
 .hero-right{background:var(--green);display:flex;align-items:center;justify-content:center;padding:60px;position:relative;overflow:hidden;}
 .hero-right::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(82,183,136,.2) 0%,transparent 70%);top:-200px;right:-200px;}
 .hero-title{font-family:"Playfair Display",serif;font-size:clamp(52px,5.5vw,80px);font-weight:900;line-height:1.02;color:var(--green);letter-spacing:-3px;margin-bottom:26px;}
