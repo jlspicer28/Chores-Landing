@@ -46,12 +46,13 @@ footer{background:var(--text);padding:40px 72px;}
 </style>
 <style>
 .about-hero{padding:100px 100px 80px;background:var(--cream);border-bottom:1px solid var(--border);}
-.about-hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:480px 1fr;gap:100px;align-items:center;}
-.about-photo-wrap{position:relative;overflow:hidden;border-radius:36px;box-shadow:0 40px 80px rgba(27,67,50,.2);aspect-ratio:3/4;}
-.about-photo{width:100%;height:100%;object-fit:cover;object-position:50% 0%;transform:scale(2.8) translateY(12%);}
-.about-badge{position:absolute;bottom:32px;right:-24px;background:#fff;border-radius:20px;padding:18px 24px;box-shadow:0 16px 40px rgba(0,0,0,.12);border:1px solid var(--border);}
-.about-badge-name{font-family:"Playfair Display",serif;font-size:17px;font-weight:800;color:var(--green);}
-.about-badge-title{font-size:12px;color:var(--muted);margin-top:3px;}
+.about-hero-inner{max-width:900px;margin:0 auto;}
+.about-photo-wrap{position:relative;border-radius:24px;box-shadow:0 20px 40px rgba(27,67,50,.15);}
+.about-photo-float{float:right;width:220px;aspect-ratio:3/4;overflow:hidden;margin:0 0 20px 40px;}
+.about-photo{width:100%;height:100%;object-fit:cover;object-position:50% 15%;transform:scale(1.5) translateY(5%);}
+.about-badge{position:absolute;bottom:12px;right:12px;background:#fff;border-radius:14px;padding:10px 14px;box-shadow:0 8px 24px rgba(0,0,0,.12);border:1px solid var(--border);}
+.about-badge-name{font-family:"Playfair Display",serif;font-size:13px;font-weight:800;color:var(--green);}
+.about-badge-title{font-size:10px;color:var(--muted);margin-top:2px;}
 .story-body{font-size:16px;color:var(--muted);line-height:1.9;margin-bottom:22px;}
 .story-body strong{color:var(--green);font-weight:600;}
 .pullquote{font-family:"Playfair Display",serif;font-style:italic;font-size:22px;color:var(--green);line-height:1.55;padding:28px 32px;background:var(--gp);border-radius:20px;border-left:4px solid var(--gl);margin:32px 0;}
@@ -93,19 +94,20 @@ footer{background:var(--text);padding:40px 72px;}
   <!-- HERO / STORY -->
   <div class="about-hero">
     <div class="about-hero-inner">
-      <div class="about-photo-wrap fade-up">
-        <img class="about-photo" src="photo.jpg" alt="Johnny Spicer, Founder of Chores">
-        <div class="about-badge">
-          <div class="about-badge-name">Johnny Spicer</div>
-          <div class="about-badge-title">Founder & CEO · Chores App LLC</div>
-        </div>
-      </div>
-      <div class="fade-up d1">
+      <div class="fade-up">
         <div class="eyebrow">The Story</div>
         <h1 class="section-title">Built from a<br>door-to-door hustle.</h1>
         <p class="story-body">At 14, I wanted to build a gaming computer. My parents had a simple answer: if you want it, go earn it yourself. So I went door to door through my neighborhood, knocking on strangers' doors and asking if there was anything I could do to make a few dollars.</p>
         <p class="story-body"><strong>Six months later, I had enough to build it.</strong> But something stuck with me. Going door to door worked — but it was inefficient, awkward, and honestly, I was doing work for neighbors who felt sorry for me rather than for people who genuinely needed help.</p>
+        <div class="about-photo-wrap about-photo-float fade-up">
+          <img class="about-photo" src="photo.jpg" alt="Johnny Spicer, Founder of Chores">
+          <div class="about-badge">
+            <div class="about-badge-name">Johnny Spicer</div>
+            <div class="about-badge-title">Founder & CEO · Chores App LLC</div>
+          </div>
+        </div>
         <p class="story-body">I knew there had to be a better way. A way to connect people who truly needed tasks done with people who genuinely wanted to work — with real pay, real accountability, and <strong>none of the awkwardness.</strong></p>
+        <div style="clear:both"></div>
         <div class="pullquote">"There had to be a better way to earn money while actually helping people who needed it."</div>
         <a href="download.html" class="btn btn-green">Try Chores Today →</a>
       </div>
