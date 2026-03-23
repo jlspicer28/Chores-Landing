@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy · Chores</title>
+<meta name="description" content="Chores privacy policy — how we collect, use, and protect your data, including location and profile visibility settings.">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1B4332;--gm:#2D6A4F;--gl:#52B788;--gp:#D8F3DC;--cream:#F8F4EF;--sand:#EDE8E1;--text:#1A1A1A;--muted:#6B7280;--white:#fff;--border:#E5E0D8;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 72px;height:72px;background:rgba(248,244,239,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.07);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Playfair Display",serif;font-size:22px;font-weight:800;color:var(--green);letter-spacing:-.5px;}
+.nav-logo img{border-radius:8px;}
+.nav-links{display:flex;gap:8px;list-style:none;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:8px 16px;border-radius:50px;transition:all .2s;}
+.nav-links a:hover{color:var(--green);background:var(--gp);}
+.nav-links a.active{color:var(--green);font-weight:600;background:var(--gp);}
+.nav-cta{background:var(--green)!important;color:#fff!important;font-weight:600!important;}
+.nav-cta:hover{background:var(--gm)!important;color:#fff!important;transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,67,50,.3)!important;}
+.page{padding-top:72px;min-height:100vh;}
+footer{background:var(--text);padding:40px 72px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:"Playfair Display",serif;font-size:20px;font-weight:800;color:#fff;}
+.footer-links{display:flex;gap:28px;list-style:none;}
+.footer-links a{color:rgba(255,255,255,.45);text-decoration:none;font-size:13px;transition:color .2s;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:all .3s;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .nav-burger{display:flex;}
+  .nav-links{display:none;flex-direction:column;align-items:stretch;position:fixed;top:72px;left:0;right:0;background:rgba(248,244,239,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 16px 20px;gap:4px;z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links a{font-size:16px;padding:12px 16px;border-radius:12px;}
+  footer{padding:32px 20px;}
+  .footer-inner{flex-direction:column;gap:20px;text-align:center;}
+  .footer-links{justify-content:center;flex-wrap:wrap;gap:14px;}
+  .privacy-hero{padding:52px 24px 44px!important;}
+  .privacy-body{padding:40px 24px 80px!important;}
+}
+
+/* Privacy-specific */
+.privacy-hero{background:var(--green);padding:80px 100px 60px;}
+.privacy-hero h1{font-family:"Playfair Display",serif;font-size:clamp(32px,4vw,52px);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1.1;margin-bottom:14px;}
+.privacy-hero p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.7;max-width:560px;}
+.privacy-hero .updated{display:inline-block;background:rgba(255,255,255,.12);color:rgba(255,255,255,.65);font-size:12px;font-weight:600;padding:5px 14px;border-radius:50px;margin-bottom:20px;letter-spacing:.6px;}
+.privacy-body{max-width:780px;margin:0 auto;padding:60px 40px 100px;}
+.privacy-section{margin-bottom:48px;}
+.privacy-section h2{font-family:"Playfair Display",serif;font-size:22px;font-weight:800;color:var(--green);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gp);}
+.privacy-section p,.privacy-section li{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px;}
+.privacy-section ul{padding-left:20px;}
+.privacy-section li{margin-bottom:6px;}
+.privacy-section strong{color:var(--text);font-weight:600;}
+.highlight-box{background:var(--gp);border-radius:16px;padding:20px 24px;border-left:4px solid var(--gl);margin-bottom:16px;}
+.highlight-box p{margin:0;color:var(--gm);font-weight:500;}
+.highlight-box strong{color:var(--green);}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="favicon.ico" width="30" height="30" alt="Chores">
+    Chores
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how.html">How It Works</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="download.html" class="nav-cta">Get the App</a></li>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <div class="privacy-hero">
+    <div class="updated">Last updated: March 2026</div>
+    <h1>Privacy Policy</h1>
+    <p>We built Chores to connect neighbors, not to collect data. Here's exactly what we collect, how we use it, and the controls you have.</p>
+  </div>
+
+  <div class="privacy-body">
+
+    <div class="privacy-section">
+      <h2>1. Information We Collect</h2>
+      <p>We collect only what's needed to run the Chores platform:</p>
+      <ul>
+        <li><strong>Account information:</strong> Name, email address, and password (stored encrypted via Supabase Auth).</li>
+        <li><strong>Profile information:</strong> Bio, skills, profile photo, and ZIP code — all optional and fully editable.</li>
+        <li><strong>Job information:</strong> Title, description, category, pay, date, and the address of where the job takes place.</li>
+        <li><strong>Location data:</strong> ZIP code used to match workers with nearby jobs and display pins on the map.</li>
+        <li><strong>Messages:</strong> In-app messages between users, stored securely and never sold to third parties.</li>
+        <li><strong>Payment data:</strong> We do not store credit card numbers. Payments are processed through Stripe, which has its own privacy policy.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>2. Location Data &amp; Map Pins</h2>
+      <div class="highlight-box">
+        <p><strong>By default, job pins on the map are placed within approximately half a mile of the actual job address.</strong> This protects the poster's home address from being revealed to the public before a worker is hired.</p>
+      </div>
+      <p>You have two options for how your job's location appears on the map:</p>
+      <ul>
+        <li><strong>Approximate location (default, recommended):</strong> Your job pin is placed within ±0.25 miles of your actual address. Workers see the general area, not your exact home. The precise address is only shared with the worker you hire.</li>
+        <li><strong>Exact location (opt-in):</strong> If you enable "Show Exact Location" in your Privacy settings, your job pin will appear at your precise address. Only enable this if you're comfortable sharing your exact location publicly on the map.</li>
+      </ul>
+      <p>In either case, the exact address is never shown in the public job feed. It is only disclosed to the specific worker you accept for the job.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>3. Profile Visibility</h2>
+      <div class="highlight-box">
+        <p><strong>Your profile is visible to nearby users by default.</strong> You can set it to private at any time in your Privacy settings.</p>
+      </div>
+      <p>When your profile is set to <strong>public</strong>, other users can see your name, photo, bio, skills, rating, and number of jobs completed.</p>
+      <p>When your profile is set to <strong>private</strong>, visitors see only your name and a lock indicator. They can send you a request to view your profile, which arrives as a message in your inbox. You decide whether to accept by responding.</p>
+      <p>Regardless of your visibility setting, job posters can always see the profiles of workers who apply to their jobs, and workers can see the profiles of posters whose jobs they are hired for.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>4. How We Use Your Information</h2>
+      <ul>
+        <li>To match workers with nearby jobs based on ZIP code distance.</li>
+        <li>To facilitate in-app messaging between job posters and workers.</li>
+        <li>To process payments and maintain escrow until job completion.</li>
+        <li>To send notifications about job applications, messages, and payment events (if enabled).</li>
+        <li>To calculate and display ratings and reviews.</li>
+        <li>To enforce our community guidelines and resolve disputes.</li>
+      </ul>
+      <p>We do <strong>not</strong> sell your data to advertisers. We do not share your personal information with third parties except as needed to operate the platform (e.g., Stripe for payments, Supabase for database hosting).</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>5. Your Privacy Controls</h2>
+      <p>You have direct control over your privacy in the app's Settings → Privacy tab:</p>
+      <ul>
+        <li><strong>Profile Visibility:</strong> Toggle your profile between public and private.</li>
+        <li><strong>Show Exact Location:</strong> Choose whether your job pins appear at your exact address or within a half-mile radius.</li>
+        <li><strong>Usage Analytics:</strong> Opt out of anonymous usage data collection used to improve the app.</li>
+        <li><strong>Marketing Emails:</strong> Opt out of promotional emails at any time.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>6. Data Retention &amp; Deletion</h2>
+      <p>You can delete your account at any time from Settings → Account. When you delete your account:</p>
+      <ul>
+        <li>Your profile, bio, and skills are permanently removed.</li>
+        <li>Your job posts are removed from the public feed.</li>
+        <li>Message history is retained for 30 days for dispute resolution purposes, then permanently deleted.</li>
+        <li>Payment records are retained for 7 years as required by financial regulations.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>7. Security</h2>
+      <p>All data is encrypted in transit using TLS. Passwords are hashed and never stored in plain text. Authentication is handled by Supabase Auth, which implements industry-standard security practices.</p>
+      <p>We perform regular security reviews and will notify you promptly if a data breach affects your account.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>8. Children's Privacy</h2>
+      <p>Chores is available to users 13 and older. Users under 18 must have parental consent to register. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has registered, contact us immediately at <a href="mailto:support@choresnearme.com" style="color:var(--green);font-weight:600;">support@choresnearme.com</a>.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>9. Changes to This Policy</h2>
+      <p>We may update this policy as the platform evolves. If we make material changes, we'll notify you via email or an in-app notice at least 14 days before the changes take effect.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>10. Contact Us</h2>
+      <p>Questions about your privacy or this policy? Reach us at:</p>
+      <p><a href="mailto:support@choresnearme.com" style="color:var(--green);font-weight:600;">support@choresnearme.com</a></p>
+      <p style="margin-top:4px;">Chores App LLC · United States</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Chores</div>
+    <ul class="footer-links">
+      <li><a href="how.html">How It Works</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="mailto:support@choresnearme.com">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Chores App</div>
+  </div>
+</footer>
+<script>
+window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>20);});
+const burger=document.getElementById("nav-burger");const links=document.querySelector(".nav-links");if(burger)burger.addEventListener("click",()=>links.classList.toggle("open"));
+</script>
+</body>
+</html>
