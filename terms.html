@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terms of Service · Chores</title>
+<meta name="description" content="Chores Terms of Service — the rules and guidelines that govern your use of the Chores platform.">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1B4332;--gm:#2D6A4F;--gl:#52B788;--gp:#D8F3DC;--cream:#F8F4EF;--sand:#EDE8E1;--text:#1A1A1A;--muted:#6B7280;--white:#fff;--border:#E5E0D8;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 72px;height:72px;background:rgba(248,244,239,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.07);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Playfair Display",serif;font-size:22px;font-weight:800;color:var(--green);letter-spacing:-.5px;}
+.nav-logo img{border-radius:8px;}
+.nav-links{display:flex;gap:8px;list-style:none;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:8px 16px;border-radius:50px;transition:all .2s;}
+.nav-links a:hover{color:var(--green);background:var(--gp);}
+.nav-links a.active{color:var(--green);font-weight:600;background:var(--gp);}
+.nav-cta{background:var(--green)!important;color:#fff!important;font-weight:600!important;}
+.nav-cta:hover{background:var(--gm)!important;color:#fff!important;transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,67,50,.3)!important;}
+.page{padding-top:72px;min-height:100vh;}
+footer{background:var(--text);padding:40px 72px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:"Playfair Display",serif;font-size:20px;font-weight:800;color:#fff;}
+.footer-links{display:flex;gap:28px;list-style:none;}
+.footer-links a{color:rgba(255,255,255,.45);text-decoration:none;font-size:13px;transition:color .2s;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:all .3s;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .nav-burger{display:flex;}
+  .nav-links{display:none;flex-direction:column;align-items:stretch;position:fixed;top:72px;left:0;right:0;background:rgba(248,244,239,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 16px 20px;gap:4px;z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links a{font-size:16px;padding:12px 16px;border-radius:12px;}
+  footer{padding:32px 20px;}
+  .footer-inner{flex-direction:column;gap:20px;text-align:center;}
+  .footer-links{justify-content:center;flex-wrap:wrap;gap:14px;}
+  .privacy-hero{padding:52px 24px 44px!important;}
+  .privacy-body{padding:40px 24px 80px!important;}
+}
+
+/* Terms-specific (reuses privacy styles) */
+.privacy-hero{background:var(--green);padding:80px 100px 60px;}
+.privacy-hero h1{font-family:"Playfair Display",serif;font-size:clamp(32px,4vw,52px);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1.1;margin-bottom:14px;}
+.privacy-hero p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.7;max-width:560px;}
+.privacy-hero .updated{display:inline-block;background:rgba(255,255,255,.12);color:rgba(255,255,255,.65);font-size:12px;font-weight:600;padding:5px 14px;border-radius:50px;margin-bottom:20px;letter-spacing:.6px;}
+.privacy-body{max-width:780px;margin:0 auto;padding:60px 40px 100px;}
+.privacy-section{margin-bottom:48px;}
+.privacy-section h2{font-family:"Playfair Display",serif;font-size:22px;font-weight:800;color:var(--green);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gp);}
+.privacy-section p,.privacy-section li{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px;}
+.privacy-section ul{padding-left:20px;}
+.privacy-section li{margin-bottom:6px;}
+.privacy-section strong{color:var(--text);font-weight:600;}
+.highlight-box{background:var(--gp);border-radius:16px;padding:20px 24px;border-left:4px solid var(--gl);margin-bottom:16px;}
+.highlight-box p{margin:0;color:var(--gm);font-weight:500;}
+.highlight-box strong{color:var(--green);}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="favicon.ico" width="30" height="30" alt="Chores">
+    Chores
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how.html">How It Works</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="download.html" class="nav-cta">Get the App</a></li>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <div class="privacy-hero">
+    <div class="updated">Last updated: April 2026</div>
+    <h1>Terms of Service</h1>
+    <p>By using Chores, you agree to these terms. Please read them carefully — they govern your rights and responsibilities on the platform.</p>
+  </div>
+
+  <div class="privacy-body">
+
+    <div class="privacy-section">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By creating an account or using the Chores app ("the Platform"), you agree to be bound by these Terms of Service and our <a href="privacy.html" style="color:var(--green);font-weight:600;">Privacy Policy</a>. If you do not agree to these terms, do not use the app. These terms apply to all users, including workers and job posters.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>2. Eligibility</h2>
+      <p>You must be at least <strong>16 years old</strong> to create an account and use Chores. Users under 18 must have parental or guardian consent. By using the app, you confirm that you meet these age requirements. We may require identity verification to confirm your eligibility.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>3. User Accounts</h2>
+      <p>You are responsible for maintaining the confidentiality of your account credentials. You agree to:</p>
+      <ul>
+        <li>Provide accurate, current, and complete information during registration.</li>
+        <li>Update your information as needed to keep it accurate.</li>
+        <li>Not share your account or use another person's account.</li>
+        <li>Notify us immediately if you suspect unauthorized access to your account.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>4. The Chores Platform</h2>
+      <div class="highlight-box">
+        <p><strong>Chores is a marketplace, not an employer.</strong> We connect people who need tasks done (posters) with people willing to do them (workers). Workers are independent contractors solely responsible for their own taxes, insurance, and compliance with applicable laws.</p>
+      </div>
+      <p>Chores does not guarantee the quality of work performed, the reliability of any user, or the completion of any job. We provide the platform and payment infrastructure — the actual service agreement is between the poster and the worker.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>5. Escrow &amp; Payments</h2>
+      <p>All payments between posters and workers are processed through our escrow system, powered by Stripe:</p>
+      <ul>
+        <li><strong>When a poster hires a worker,</strong> the poster's payment method is charged and the funds are held in escrow.</li>
+        <li><strong>Funds are released</strong> only after both the poster and the worker confirm that the job has been completed satisfactorily.</li>
+        <li><strong>Platform fee:</strong> Chores charges an 8% platform fee on all transactions. This fee is deducted from the worker's payout.</li>
+        <li><strong>Refunds:</strong> Poster payments are non-refundable once a job begins, unless a dispute is successfully resolved in the poster's favor.</li>
+      </ul>
+      <p>Workers receive payouts via Stripe Connect. Payout timing depends on the worker's configured payout schedule (daily, weekly, or monthly).</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>6. Disputes</h2>
+      <p>In the event of a dispute between a poster and a worker:</p>
+      <ul>
+        <li>Either party may open a dispute through the app while the escrow is held.</li>
+        <li>Both parties must submit evidence through the app within <strong>48 hours</strong> of the dispute being opened.</li>
+        <li>Chores will review the evidence and make a final, binding determination on escrow release within <strong>24–72 hours</strong>.</li>
+        <li>Chores reserves the right to refund, withhold, or split the escrow based on its review.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>7. Prohibited Conduct</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Post false, misleading, or fraudulent job listings.</li>
+        <li>Harass, threaten, or discriminate against other users.</li>
+        <li>Use the platform for any illegal activities.</li>
+        <li>Create fake accounts or manipulate ratings and reviews.</li>
+        <li>Solicit or accept payments outside the Chores platform to avoid fees.</li>
+        <li>Reverse-engineer, scrape, or attempt to access the platform's source code or systems.</li>
+        <li>Post content that is obscene, violent, or hateful.</li>
+      </ul>
+      <p>Violations may result in immediate account suspension or permanent ban without prior notice.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>8. Safety</h2>
+      <div class="highlight-box">
+        <p><strong>Chores does not conduct background checks on all users.</strong> You interact with other users at your own risk.</p>
+      </div>
+      <p>We strongly recommend:</p>
+      <ul>
+        <li>Meeting in a public location first for larger or first-time jobs.</li>
+        <li>Telling someone you trust about your job arrangements.</li>
+        <li>Trusting your instincts — if something feels wrong, cancel the job.</li>
+        <li>Reporting any safety concerns immediately through the app.</li>
+      </ul>
+      <p>Chores is not liable for personal injury, property damage, or theft arising from jobs arranged through the platform.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>9. Intellectual Property</h2>
+      <p>All content, trademarks, logos, and design elements of the Chores platform are the property of Chores App LLC. You may not copy, modify, distribute, or create derivative works based on any part of the platform without our written permission.</p>
+      <p>Content you post (job descriptions, reviews, messages) remains yours, but you grant Chores a non-exclusive, royalty-free license to display and use it on the platform.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>10. Termination</h2>
+      <p>Either party may terminate this agreement at any time:</p>
+      <ul>
+        <li><strong>You</strong> can delete your account from Settings → Account → Delete Account.</li>
+        <li><strong>Chores</strong> may suspend or permanently ban accounts that violate these terms, without prior notice.</li>
+      </ul>
+      <p>Upon termination, your access to the app will be revoked. Any pending escrow may be held pending investigation. Earned but unreleased payouts will be processed according to our standard payout schedule.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>11. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law:</p>
+      <ul>
+        <li>Chores shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the platform, including lost earnings, property damage, or data loss.</li>
+        <li>Our total liability to you shall not exceed the fees you paid to Chores in the 90 days prior to the claim.</li>
+        <li>The platform is provided "as is" without warranties of any kind, express or implied.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>12. Changes to Terms</h2>
+      <p>We may update these Terms of Service at any time. We will notify you via email or in-app notification at least <strong>7 days</strong> before material changes take effect. Continued use of Chores after changes constitutes acceptance of the new terms.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>13. Governing Law</h2>
+      <p>These Terms are governed by the laws of the State of Illinois, United States, without regard to conflict of law principles. Any disputes arising from these terms shall be resolved in the courts of Cook County, Illinois, or through binding arbitration as elected by Chores.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>14. Contact Us</h2>
+      <p>Questions about these terms? Reach us at:</p>
+      <p><a href="mailto:support@choresnearme.com" style="color:var(--green);font-weight:600;">support@choresnearme.com</a></p>
+      <p style="margin-top:4px;">Chores App LLC · United States</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Chores</div>
+    <ul class="footer-links">
+      <li><a href="how.html">How It Works</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="mailto:support@choresnearme.com">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 Chores App LLC</div>
+  </div>
+</footer>
+<script>
+window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>20);});
+const burger=document.getElementById("nav-burger");const links=document.querySelector(".nav-links");if(burger)burger.addEventListener("click",()=>links.classList.toggle("open"));
+</script>
+</body>
+</html>
