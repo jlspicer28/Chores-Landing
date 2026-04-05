@@ -131,13 +131,15 @@ footer{background:var(--text);padding:40px 72px;}
     <img src="favicon.ico" width="30" height="30" alt="Chores">
     Chores
   </a>
-  <ul class="nav-links">
-    <li><a href="index.html" >Home</a></li>
-    <li><a href="how.html" class='active'>How It Works</a></li>
-    <li><a href="features.html" >Features</a></li>
-    <li><a href="about.html" >About</a></li>
-    <li><a href="download.html" class="nav-cta ">Get the App</a></li>
   <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how.html" class='active'>How It Works</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+    <li><a href="download.html" class="nav-cta">Get the App</a></li>
   </ul>
 </nav>
 <div class="page">
@@ -295,7 +297,7 @@ footer{background:var(--text);padding:40px 72px;}
         <h2 class="section-title">Common questions.</h2>
       </div>
       <div id="faq-list">
-        <div class="faq-item"><div class="faq-q"><span class="faq-q-text">Is Chores free to join?</span><div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">Yes — completely free to create an account and start using the app. Chores charges an 8% platform fee on completed jobs, deducted from the worker's payout. There are no subscription fees or hidden charges.</div></div></div>
+        <div class="faq-item"><div class="faq-q"><span class="faq-q-text">Is Chores free to join?</span><div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">Yes — completely free to create an account and start using the app. Chores charges a 15% service fee on completed jobs, deducted from the worker's payout. Posters pay the listed price with no extra charges.</div></div></div>
         <div class="faq-item"><div class="faq-q"><span class="faq-q-text">How does escrow work?</span><div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">When a poster hires a worker, the payment is captured by Stripe and held in escrow — it's not released to the worker yet. Once both parties confirm the job is complete, the funds are automatically released to the worker within 24 hours. If the worker doesn't show, the poster receives a full refund.</div></div></div>
         <div class="faq-item"><div class="faq-q"><span class="faq-q-text">Who can work on Chores?</span><div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">Workers must be at least 16 years old with a valid government-issued ID or driver's license. Workers under 18 need parental consent. To receive payouts, workers connect a bank account through Stripe — a quick, secure process.</div></div></div>
         <div class="faq-item"><div class="faq-q"><span class="faq-q-text">Is my address shared publicly?</span><div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a"><div class="faq-a-inner">No. When you post a job, workers only see an approximate pin on the map — about half a mile from your actual location. Your full address is only revealed to the specific worker you hire, after payment is secured in escrow.</div></div></div>
@@ -335,6 +337,6 @@ document.querySelectorAll(".faq-q").forEach(q=>{
   });
 });
 
-document.getElementById('nav-burger').addEventListener('click',()=>{document.querySelector('#nav .nav-links').classList.toggle('open');});
+document.getElementById('nav-burger').addEventListener('click',()=>{document.getElementById('nav-links').classList.toggle('open');});
 </script>
 </body></html>

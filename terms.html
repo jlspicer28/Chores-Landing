@@ -70,13 +70,15 @@ footer{background:var(--text);padding:40px 72px;}
     <img src="favicon.ico" width="30" height="30" alt="Chores">
     Chores
   </a>
-  <ul class="nav-links">
+  <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="how.html">How It Works</a></li>
     <li><a href="features.html">Features</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="terms.html" class='active'>Terms</a></li>
     <li><a href="download.html" class="nav-cta">Get the App</a></li>
-  <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </ul>
 </nav>
 
@@ -234,7 +236,7 @@ footer{background:var(--text);padding:40px 72px;}
 </footer>
 <script>
 window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>20);});
-const burger=document.getElementById("nav-burger");const links=document.querySelector(".nav-links");if(burger)burger.addEventListener("click",()=>links.classList.toggle("open"));
+document.getElementById('nav-burger').addEventListener('click',()=>{document.getElementById('nav-links').classList.toggle('open');});
 </script>
 </body>
 </html>

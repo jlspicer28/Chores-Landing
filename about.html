@@ -108,13 +108,15 @@ footer{background:var(--text);padding:40px 72px;}
     <img src="favicon.ico" width="30" height="30" alt="Chores">
     Chores
   </a>
-  <ul class="nav-links">
-    <li><a href="index.html" >Home</a></li>
-    <li><a href="how.html" >How It Works</a></li>
-    <li><a href="features.html" >Features</a></li>
-    <li><a href="about.html" class='active'>About</a></li>
-    <li><a href="download.html" class="nav-cta ">Get the App</a></li>
   <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how.html">How It Works</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="about.html" class='active'>About</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+    <li><a href="download.html" class="nav-cta">Get the App</a></li>
   </ul>
 </nav>
 <div class="page">
@@ -127,16 +129,12 @@ footer{background:var(--text);padding:40px 72px;}
         <h1 class="section-title">Built from a<br>door-to-door hustle.</h1>
         <p class="story-body">At 14, I wanted to build a gaming computer. My parents had a simple answer: if you want it, go earn it yourself. So I went door to door through my neighborhood, knocking on strangers' doors and asking if there was anything I could do to make a few dollars.</p>
         <p class="story-body"><strong>Six months later, I had enough to build it.</strong> But something stuck with me. Going door to door worked — but it was inefficient, awkward, and honestly, I was doing work for neighbors who felt sorry for me rather than for people who genuinely needed help.</p>
-        <div class="about-photo-wrap about-photo-float fade-up">
-          <img class="about-photo" src="photo.jpg" alt="Johnny Spicer, Founder of Chores">
-          <div class="about-badge">
-            <div class="about-badge-name">Johnny Spicer</div>
-            <div class="about-badge-title">Founder & CEO · Chores App LLC</div>
-          </div>
-        </div>
         <p class="story-body">I knew there had to be a better way. A way to connect people who truly needed tasks done with people who genuinely wanted to work — with real pay, real accountability, and <strong>none of the awkwardness.</strong></p>
-        <div style="clear:both"></div>
         <div class="pullquote">"There had to be a better way to earn money while actually helping people who needed it."</div>
+        <div style="margin:40px 0 32px;padding:28px 0 0;border-top:1px solid var(--border);">
+          <div style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--green);margin-bottom:4px;">— Johnny Spicer</div>
+          <div style="font-size:13px;color:var(--muted);font-weight:500;">Founder & CEO · Chores App LLC</div>
+        </div>
         <a href="download.html" class="btn btn-green">Try Chores Today →</a>
       </div>
     </div>
@@ -159,7 +157,7 @@ footer{background:var(--text);padding:40px 72px;}
         <div class="mission-card fade-up d2">
           <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M18.75 5 21 16H15l2.25-11M5.25 5 3 16h6L6.75 5M9 21h6"/></svg></div>
           <div class="mission-title">Fair Pay</div>
-          <div class="mission-body">Workers set their own rates, posters set their budgets, and the market decides. We charge just 8% — less than any comparable platform.</div>
+          <div class="mission-body">Workers set their own rates, posters set their budgets, and the market decides. We charge a 15% service fee — less than any comparable platform.</div>
         </div>
         <div class="mission-card fade-up d3">
           <div class="mission-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
@@ -218,6 +216,6 @@ footer{background:var(--text);padding:40px 72px;}
 window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>20);});
 document.querySelectorAll(".fade-up").forEach(el=>{new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in");});},{threshold:.12}).observe(el);});
 
-document.getElementById('nav-burger').addEventListener('click',()=>{document.querySelector('#nav .nav-links').classList.toggle('open');});
+document.getElementById('nav-burger').addEventListener('click',()=>{document.getElementById('nav-links').classList.toggle('open');});
 </script>
 </body></html>

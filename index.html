@@ -141,13 +141,15 @@ footer{background:var(--text);padding:40px 72px;}
     <img src="favicon.ico" width="30" height="30" alt="Chores">
     Chores
   </a>
-  <ul class="nav-links">
-    <li><a href="index.html" class='active'>Home</a></li>
-    <li><a href="how.html" >How It Works</a></li>
-    <li><a href="features.html" >Features</a></li>
-    <li><a href="about.html" >About</a></li>
-    <li><a href="download.html" class="nav-cta ">Get the App</a></li>
   <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class='active'>Home</a></li>
+    <li><a href="how.html">How It Works</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+    <li><a href="download.html" class="nav-cta">Get the App</a></li>
   </ul>
 </nav>
 <div class="page">
@@ -165,7 +167,7 @@ footer{background:var(--text);padding:40px 72px;}
         <a href="how.html" class="btn btn-outline">See how it works →</a>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-num">8%</div><div class="stat-label">Platform fee</div></div>
+        <div><div class="stat-num">15%</div><div class="stat-label">Service fee</div></div>
         <div><div class="stat-num">$0</div><div class="stat-label">Free to join</div></div>
         <div><div class="stat-num">24hr</div><div class="stat-label">Avg payout time</div></div>
       </div>
@@ -261,6 +263,6 @@ footer{background:var(--text);padding:40px 72px;}
 window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>20);});
 document.querySelectorAll(".fade-up").forEach(el=>{new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in");});},{threshold:.12}).observe(el);});
 
-document.getElementById('nav-burger').addEventListener('click',()=>{document.querySelector('#nav .nav-links').classList.toggle('open');});
+document.getElementById('nav-burger').addEventListener('click',()=>{document.getElementById('nav-links').classList.toggle('open');});
 </script>
 </body></html>
