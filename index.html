@@ -264,5 +264,96 @@ window.addEventListener("scroll",()=>{document.getElementById("nav").classList.t
 document.querySelectorAll(".fade-up").forEach(el=>{new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in");});},{threshold:.12}).observe(el);});
 
 document.getElementById('nav-burger').addEventListener('click',()=>{document.getElementById('nav-links').classList.toggle('open');});
+
+/* ── Email Popup ── */
+(function(){
+  const POPUP_DELAY_MS = 4000;
+  const STORAGE_KEY = 'chores_popup_dismissed';
+
+  if(localStorage.getItem(STORAGE_KEY)) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'chores-popup-overlay';
+  overlay.innerHTML = `
+    <div id="chores-popup">
+      <button id="chores-popup-close" aria-label="Close">&times;</button>
+      <div class="popup-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <h3 class="popup-title">Join the Chores community today!</h3>
+      <p class="popup-sub">Be the first to know about new features, local tasks, and neighbor updates in your area.</p>
+      <form id="chores-popup-form">
+        <input type="email" id="chores-popup-email" placeholder="Enter your email" required autocomplete="email">
+        <button type="submit" class="popup-btn">Join Now</button>
+      </form>
+      <p class="popup-fine">No spam, ever. Unsubscribe anytime.</p>
+      <p id="chores-popup-success" class="popup-success" style="display:none;">You're in! Welcome to the Chores community.</p>
+    </div>
+  `;
+
+  const style = document.createElement('style');
+  style.textContent = `
+    #chores-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);z-index:9999;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .35s ease;padding:20px;}
+    #chores-popup-overlay.visible{opacity:1;}
+    #chores-popup{background:var(--cream,#F8F4EF);border-radius:24px;padding:44px 40px 36px;max-width:420px;width:100%;text-align:center;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.25);transform:translateY(20px) scale(.96);transition:transform .35s ease;}
+    #chores-popup-overlay.visible #chores-popup{transform:translateY(0) scale(1);}
+    #chores-popup-close{position:absolute;top:16px;right:18px;background:none;border:none;font-size:26px;color:var(--muted,#6B7280);cursor:pointer;line-height:1;padding:4px 8px;border-radius:8px;transition:all .2s;}
+    #chores-popup-close:hover{background:var(--gp,#D8F3DC);color:var(--green,#1B4332);}
+    .popup-icon{margin-bottom:16px;}
+    .popup-title{font-family:"Playfair Display",serif;font-size:24px;font-weight:800;color:var(--green,#1B4332);letter-spacing:-.5px;margin-bottom:10px;}
+    .popup-sub{font-size:14px;color:var(--muted,#6B7280);line-height:1.65;margin-bottom:24px;}
+    #chores-popup-form{display:flex;gap:10px;margin-bottom:12px;}
+    #chores-popup-email{flex:1;padding:14px 18px;border-radius:50px;border:1.5px solid var(--border,#E5E0D8);font-size:14px;font-family:inherit;outline:none;background:var(--white,#fff);transition:border-color .2s;}
+    #chores-popup-email:focus{border-color:var(--gl,#52B788);}
+    .popup-btn{padding:14px 26px;border-radius:50px;background:var(--green,#1B4332);color:#fff;font-size:14px;font-weight:600;font-family:inherit;border:none;cursor:pointer;transition:all .25s;white-space:nowrap;}
+    .popup-btn:hover{background:var(--gm,#2D6A4F);transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,67,50,.3);}
+    .popup-fine{font-size:11px;color:var(--muted,#6B7280);margin-top:4px;}
+    .popup-success{color:var(--gm,#2D6A4F);font-weight:600;font-size:15px;margin-top:8px;}
+    @media(max-width:480px){
+      #chores-popup{padding:36px 24px 28px;}
+      #chores-popup-form{flex-direction:column;}
+      .popup-btn{width:100%;}
+    }
+  `;
+  document.head.appendChild(style);
+  document.body.appendChild(overlay);
+
+  setTimeout(()=>{ overlay.classList.add('visible'); }, POPUP_DELAY_MS);
+
+  function closePopup(){
+    overlay.classList.remove('visible');
+    setTimeout(()=>overlay.remove(), 350);
+    localStorage.setItem(STORAGE_KEY, 'true');
+  }
+
+  document.getElementById('chores-popup-close').addEventListener('click', closePopup);
+  overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closePopup(); });
+
+  document.getElementById('chores-popup-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = document.getElementById('chores-popup-email').value;
+
+    fetch('https://chores-backend4.onrender.com/api/subscribe', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ email: email })
+    }).then(function(resp){
+      if(!resp.ok) throw new Error('Request failed');
+      document.getElementById('chores-popup-form').style.display = 'none';
+      document.querySelector('.popup-fine').style.display = 'none';
+      document.getElementById('chores-popup-success').style.display = 'block';
+      setTimeout(closePopup, 2500);
+    }).catch(function(){
+      document.getElementById('chores-popup-form').style.display = 'none';
+      document.querySelector('.popup-fine').style.display = 'none';
+      document.getElementById('chores-popup-success').textContent = 'Something went wrong. Please try again later.';
+      document.getElementById('chores-popup-success').style.color = '#b91c1c';
+      document.getElementById('chores-popup-success').style.display = 'block';
+    });
+  });
+})();
 </script>
 </body></html>
