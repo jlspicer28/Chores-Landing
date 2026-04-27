@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Delete Your Chores Account · Chores</title>
+<meta name="description" content="How to delete your Chores account and request deletion of your associated data.">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1B4332;--gm:#2D6A4F;--gl:#52B788;--gp:#D8F3DC;--cream:#F8F4EF;--sand:#EDE8E1;--text:#1A1A1A;--muted:#6B7280;--white:#fff;--border:#E5E0D8;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 72px;height:72px;background:rgba(248,244,239,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.07);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Playfair Display",serif;font-size:22px;font-weight:800;color:var(--green);letter-spacing:-.5px;}
+.nav-logo img{border-radius:8px;}
+.nav-links{display:flex;gap:8px;list-style:none;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:8px 16px;border-radius:50px;transition:all .2s;}
+.nav-links a:hover{color:var(--green);background:var(--gp);}
+.nav-links a.active{color:var(--green);font-weight:600;background:var(--gp);}
+.nav-cta{background:var(--green)!important;color:#fff!important;font-weight:600!important;}
+.nav-cta:hover{background:var(--gm)!important;color:#fff!important;transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,67,50,.3)!important;}
+.page{padding-top:72px;min-height:100vh;}
+footer{background:var(--text);padding:40px 72px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:"Playfair Display",serif;font-size:20px;font-weight:800;color:#fff;}
+.footer-links{display:flex;gap:28px;list-style:none;}
+.footer-links a{color:rgba(255,255,255,.45);text-decoration:none;font-size:13px;transition:color .2s;}
+.footer-links a:hover{color:#fff;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--green);border-radius:2px;transition:all .3s;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .nav-burger{display:flex;}
+  .nav-links{display:none;flex-direction:column;align-items:stretch;position:fixed;top:72px;left:0;right:0;background:rgba(248,244,239,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 16px 20px;gap:4px;z-index:199;}
+  .nav-links.open{display:flex;}
+  .nav-links a{font-size:16px;padding:12px 16px;border-radius:12px;}
+  footer{padding:32px 20px;}
+  .footer-inner{flex-direction:column;gap:20px;text-align:center;}
+  .footer-links{justify-content:center;flex-wrap:wrap;gap:14px;}
+  .privacy-hero{padding:52px 24px 44px!important;}
+  .privacy-body{padding:40px 24px 80px!important;}
+}
+
+/* Reuse privacy/terms styles */
+.privacy-hero{background:var(--green);padding:80px 100px 60px;}
+.privacy-hero h1{font-family:"Playfair Display",serif;font-size:clamp(32px,4vw,52px);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1.1;margin-bottom:14px;}
+.privacy-hero p{font-size:16px;color:rgba(255,255,255,.7);line-height:1.7;max-width:560px;}
+.privacy-hero .updated{display:inline-block;background:rgba(255,255,255,.12);color:rgba(255,255,255,.65);font-size:12px;font-weight:600;padding:5px 14px;border-radius:50px;margin-bottom:20px;letter-spacing:.6px;}
+.privacy-body{max-width:780px;margin:0 auto;padding:60px 40px 100px;}
+.privacy-section{margin-bottom:48px;}
+.privacy-section h2{font-family:"Playfair Display",serif;font-size:22px;font-weight:800;color:var(--green);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gp);}
+.privacy-section p,.privacy-section li{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px;}
+.privacy-section ul,.privacy-section ol{padding-left:20px;}
+.privacy-section li{margin-bottom:6px;}
+.privacy-section strong{color:var(--text);font-weight:600;}
+.highlight-box{background:var(--gp);border-radius:16px;padding:20px 24px;border-left:4px solid var(--gl);margin-bottom:16px;}
+.highlight-box p{margin:0;color:var(--gm);font-weight:500;}
+.highlight-box strong{color:var(--green);}
+.cta-button{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:50px;font-size:15px;margin-top:8px;transition:all .2s;}
+.cta-button:hover{background:var(--gm);transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,67,50,.3);}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="favicon.ico" width="30" height="30" alt="Chores">
+    Chores
+  </a>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="how.html">How It Works</a></li>
+    <li><a href="features.html">Features</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+    <li><a href="download.html" class="nav-cta">Get the App</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <div class="privacy-hero">
+    <div class="updated">Last updated: April 27, 2026</div>
+    <h1>Delete Your Chores Account</h1>
+    <p>You can delete your Chores account and request removal of your associated data at any time. This page explains exactly how and what happens to your data.</p>
+  </div>
+
+  <div class="privacy-body">
+
+    <div class="privacy-section">
+      <h2>Option 1: Delete in the App (Fastest)</h2>
+      <ol>
+        <li>Open the <strong>Chores</strong> app on iOS or Android.</li>
+        <li>Tap the <strong>Profile</strong> tab (bottom right).</li>
+        <li>Scroll to the <strong>Account</strong> section.</li>
+        <li>Tap <strong>Delete Account</strong> at the bottom.</li>
+        <li>Type <strong>DELETE</strong> in the confirmation field and tap confirm.</li>
+      </ol>
+      <p>Your account is deactivated immediately and cannot be restored. Permanent data deletion follows within 30 days per our retention policy below.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Option 2: Request Deletion by Email</h2>
+      <p>If you can't access the app or prefer to request deletion in writing, email us:</p>
+      <a class="cta-button" href="mailto:support@choresnearme.com?subject=Delete%20My%20Account">Email support@choresnearme.com</a>
+      <p style="margin-top:14px;">Use the subject line <strong>"Delete My Account"</strong> and include the email address associated with your Chores account so we can verify ownership. We will confirm deletion within 7 business days.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>What Gets Deleted</h2>
+      <p>When you delete your account, the following data is <strong>permanently removed within 30 days</strong>:</p>
+      <ul>
+        <li>Profile (name, email, phone, address, avatar, bio, skills)</li>
+        <li>Job listings you posted</li>
+        <li>Job applications you submitted</li>
+        <li>Messages sent through the platform</li>
+        <li>Reviews you wrote (anonymized — the rating remains for the recipient's overall score, but your name is removed)</li>
+        <li>Saved payment methods (Stripe customer record purged)</li>
+        <li>Push notification tokens</li>
+        <li>Device and session data</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>What May Be Retained</h2>
+      <div class="highlight-box">
+        <p><strong>Some data is retained to comply with legal, financial, and tax obligations</strong> even after account deletion.</p>
+      </div>
+      <p>Specifically:</p>
+      <ul>
+        <li><strong>Transaction records.</strong> We retain payment, escrow, and payout records for up to <strong>7 years</strong> to satisfy IRS, financial-services, and audit requirements. These records do not contain your active profile information after deletion.</li>
+        <li><strong>Records related to disputes, fraud, abuse reports, or safety incidents</strong> may be retained as long as legally required to resolve the matter or to protect the platform and other users.</li>
+        <li><strong>Anonymized aggregate analytics</strong> (e.g., "Oxford had X jobs posted in April 2026") may be retained indefinitely. These contain no personally identifiable information.</li>
+        <li><strong>Tax forms (1099-Ks, etc.)</strong> are retained as required by federal and state law.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Data Deletion Without Account Deletion</h2>
+      <p>You can also request deletion of <strong>specific data</strong> without closing your account. Email <a href="mailto:support@choresnearme.com" style="color:var(--green);font-weight:600;">support@choresnearme.com</a> with a description of what you want removed (for example: a specific message, a job listing, or your address). We will respond within 7 business days.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>Questions</h2>
+      <p>If you have questions about account deletion or your privacy rights, contact us at <a href="mailto:support@choresnearme.com" style="color:var(--green);font-weight:600;">support@choresnearme.com</a>.</p>
+      <p>You can also review our full <a href="privacy.html" style="color:var(--green);font-weight:600;">Privacy Policy</a> for more details on how we handle your data.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Chores</div>
+    <ul class="footer-links">
+      <li><a href="how.html">How It Works</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="mailto:support@choresnearme.com">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 Chores App LLC</div>
+  </div>
+</footer>
+<script>
+window.addEventListener("scroll",()=>{document.getElementById("nav").classList.toggle("scrolled",window.scrollY>20);});
+document.getElementById('nav-burger').addEventListener('click',()=>{document.getElementById('nav-links').classList.toggle('open');});
+</script>
+</body>
+</html>
